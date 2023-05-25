@@ -2,7 +2,9 @@ import cv2
 import cvlib as cv
 from cvlib.object_detection import draw_bbox
 from ultralytics import YOLO
-image=cv2.imread('image/computer.jpg')
+#image=cv2.imread('image/penguin.jpg')
+#image=cv2.imread('image/fish_1.jpg')
+image=cv2.imread('image/fish_2.jpg')
 #image=cv2.imread('image/bike.jpeg')
 #image=cv2.imread('image/car.jpg')
 #image=cv2.imread('image/cup.jpg')
@@ -25,8 +27,8 @@ image=cv2.imread('image/computer.jpg')
 
 #other way to detect object 
 
+model = YOLO("runs/detect/train5/weights/best.pt")
 model = YOLO("yolov8x.pt")
-
 results=model.predict(source=image,show=True) 
 names = model.names
 
