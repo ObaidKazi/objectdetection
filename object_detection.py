@@ -27,7 +27,10 @@ image=cv2.imread('image/fish_2.jpg')
 
 #other way to detect object 
 
-model = YOLO("runs/detect/train5/weights/best.pt")
+# for custom model need to uncomment this line and add path where you getting best.pt after training model
+#model = YOLO("runs/detect/train5/weights/best.pt")
+
+
 model = YOLO("yolov8x.pt")
 results=model.predict(source=image,show=True) 
 names = model.names
